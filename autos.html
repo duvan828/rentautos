@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent-A-Car - Nuestros Autos</title>
+    <style>
+        /* Mismo CSS de index.html */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        #header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        #menu {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: #3498db;
+        }
+
+        #contenido {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .galeria-autos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .auto {
+            text-align: center;
+            margin: 15px;
+            position: relative;
+        }
+
+        .auto img {
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .auto:hover img {
+            transform: scale(1.05);
+        }
+
+        .auto-info {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        #footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Capa de encabezado -->
+    <div id="header">
+        <h1>Rent-A-Car</h1>
+        <p>Tu mejor opción en alquiler de automóviles</p>
+    </div>
+
+    <!-- Menú de navegación -->
+    <div id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="autos.html">Autos</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- Capa de contenido - Galería de Autos -->
+    <div id="contenido">
+        <h2>Nuestra Flota de Automóviles</h2>
+        <div class="galeria-autos">
+            <div class="auto" onmouseover="mostrarInfoAuto(this)" onmouseout="ocultarInfoAuto(this)">
+                <img src="/api/placeholder/300/200" alt="Sedán Económico">
+                <div class="auto-info">
+                    <h3>Sedán Económico</h3>
+                    <p>Ideal para viajes urbanos. Cómodo y eficiente.</p>
+                    <p>Precio: $50/día</p>
+                </div>
+            </div>
+
+            <div class="auto" onmouseover="mostrarInfoAuto(this)" onmouseout="ocultarInfoAuto(this)">
+                <img src="/api/placeholder/300/200" alt="SUV Familiar">
+                <div class="auto-info">
+                    <h3>SUV Familiar</h3>
+                    <p>Espacio y comodidad para toda la familia.</p>
+                    <p>Precio: $80/día</p>
+                </div>
+            </div>
+
+            <div class="auto" onmouseover="mostrarInfoAuto(this)" onmouseout="ocultarInfoAuto(this)">
+                <img src="/api/placeholder/300/200" alt="Deportivo de Lujo">
+                <div class="auto-info">
+                    <h3>Deportivo de Lujo</h3>
+                    <p>Potencia y estilo para ocasiones especiales.</p>
+                    <p>Precio: $150/día</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <div id="footer">
+        © 2025 Rent-A-Car. Todos los derechos reservados.
+    </div>
+
+    <script>
+        // Funciones para eventos de mouse sobre imágenes de autos
+        function mostrarInfoAuto(elemento) {
+            const infoAuto = elemento.querySelector('.auto-info');
+            if (infoAuto) {
+                infoAuto.style.display = 'block';
+            }
+        }
+
+        function ocultarInfoAuto(elemento) {
+            const infoAuto = elemento.querySelector('.auto-info');
+            if (infoAuto) {
+                infoAuto.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
